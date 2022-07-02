@@ -1,0 +1,12 @@
+Replacement for https://github.com/oeuillot/node-matroska/blob/master/lib/schema.js(`schema.js`) from
+https://github.com/oeuillot/node-matroska[node-matroska], which is GPL-licenced.
+
+This version is automatically generated from the Matroska
+https://raw.githubusercontent.com/ietf-wg-cellar/matroska-specification/master/ebml_matroska.xml[EBML]
+https://raw.githubusercontent.com/ietf-wg-cellar/ebml-specification/master/ebml.xml[specifications]
+and is MIT-licensed.
+
+This schema is in link:schema.js[].
+
+To generate it on your own machine, run link:gen_schema.sh[]. You'll need Node.js and wget.
+The script will complain if the result differs from node-matroska's schema.
