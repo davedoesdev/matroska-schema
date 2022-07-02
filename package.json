@@ -1,0 +1,23 @@
+{
+  "name": "matroska-schema",
+  "description": "node-ebml's schema packaged in a format compatible with node-matroska's",
+  "version": "1.0.0",
+  "homepage": "https://github.com/davedoesdev/matroska-schema",
+  "author": {
+    "name": "David Halls",
+    "email": "dave@davedoesdev.com",
+    "url": "http://www.davedoesdev.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davedoesdev/matroska-schema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davedoesdev/matroska-schema/issues"
+  },
+  "license": "MIT",
+  "main": "schema.js",
+  "scripts": {
+    "readme": "asciidoc -b docbook -o - README.adoc | pandoc -f docbook -t gfm -o README.md"
+  }
+}
