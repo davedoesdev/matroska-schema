@@ -1,4 +1,4 @@
-Replacement for https://github.com/oeuillot/node-matroska/blob/master/lib/schema.js(`schema.js`) from
+Replacement for https://github.com/oeuillot/node-matroska/blob/master/lib/schema.js[`schema.js`] from
 https://github.com/oeuillot/node-matroska[node-matroska], which is GPL-licenced.
 
 This version is automatically generated from the Matroska
