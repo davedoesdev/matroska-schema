@@ -1,0 +1,57 @@
+<EBMLSchema xmlns="urn:ietf:rfc:8794" docType="ebml" version="1">
+  <!-- These have been removed from the spec -->
+  <element name="SignatureSlot" path="\EBML\SignatureSlot" id="0x1B538667" type="master" multiple="1">
+    <documentation lang="en" purpose="definition">Contain signature of some (coming) elements in the stream.</documentation>
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+  <element name="SignatureAlgo" path="\EBML\SignatureSlot\SignatureAlgo" id="0x7E8A" type="uinteger">
+    <documentation lang="en" purpose="definition">Signature algorithm used (1=RSA, 2=elliptic).</documentation>
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+  <element name="SignatureHash" path="\EBML\SignatureSlot\SignatureHash" id="0x7E9A" type="uinteger">
+    <documentation lang="en" purpose="definition">Hash algorithm used (1=SHA1-160, 2=MD5).</documentation>
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+  <element name="SignaturePublicKey" path="\EBML\SignatureSlot\SignaturePublicKey" id="0x7EA5" type="binary">
+    <documentation lang="en" purpose="definition">The public key to use with the algorithm (in the case of a PKI-based signature).</documentation>
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+  <element name="Signature" path="\EBML\SignatureSlot\Signature" id="0x7EB5" type="binary">
+    <documentation lang="en" purpose="definition">The signature of the data (until a new.</documentation>
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+  <element name="SignatureElements" path="\EBML\SignatureElements" id="0x7E5B" type="master">
+    <documentation lang="en" purpose="definition">Contains elements that will be used to compute the signature.</documentation>
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+  <element name="SignatureElementList" path="\EBML\SignatureElements\SignatureElementList" id="0x7E7B" type="master" multiple="1" i="Cluster|Block|BlockAdditional">
+    <documentation lang="en" purpose="definition">A list consists of a number of consecutive elements that represent one case where data is used in signature. Ex:  means that the BlockAdditional of all Blocks in all Clusters is used for encryption.</documentation>
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+  <element name="SignedElement" path="\EBML\SignatureElements\SignedElement" id="0x6532" type="binary" multiple="1" >
+    <documentation lang="en" purpose="definition">An element ID whose data will be used to compute the signature.</documentation>
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+  <element name="TimecodeScaleDenominator" path="\Segment\Info\TimecodeScaleDenominator" id="0x2AD7B2" type="uinteger" default="1000000000" minOccurs="1" maxOccurs="1" minver="4">
+    <documentation lang="en" purpose="definition">Timestamp scale numerator, see TimecodeScale.</documentation>
+  </element>
+
+  <!-- These are "cosmetic" fixes to match node-matroska -->
+  <element name="CRC-32" id="0xBF">
+    <extension type="webmproject.org" webm="0"/>
+  </element>
+
+  <element name="DocType" id="0x4282" default="matroska"/>
+
+  <element name="ContentEncAESSettings" id="0x47E7" minver="4">
+    <documentation lang="en" purpose="definition">Settings describing the encryption algorithm used. If `ContentEncAlgo` != 5 this **MUST** be ignored.</documentation>
+  </element>
+
+  <element name="AESSettingsCipherMode" id="0x47E8" minver="4">
+    <documentation lang="en" purpose="definition">The AES cipher mode used in the encryption.</documentation>
+  </element>
+
+  <element name="ContentEncodingOrder" id="0x5031">
+    <documentation lang="en" purpose="definition">Tells when this modification was used during encoding/muxing starting with 0 and counting upwards. The decoder/demuxer has to start with the highest order number it finds and work its way down. This value has to be unique over all ContentEncodingOrder Elements in the TrackEntry that contains this ContentEncodingOrder element.</documentation>
+  </element>
+</EBMLSchema>
