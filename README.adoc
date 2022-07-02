@@ -1,3 +1,5 @@
+image:https://github.com/davedoesdev/matroska-schema/workflows/ci/badge.svg[CI status,link=https://github.com/davedoesdev/matroska-schema/actions]
+
 Replacement for https://github.com/oeuillot/node-matroska/blob/master/lib/schema.js[`schema.js`] from
 https://github.com/oeuillot/node-matroska[node-matroska], which is GPL-licenced.
 
