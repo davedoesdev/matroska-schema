@@ -17,3 +17,6 @@ jobs:
 
       - name: Generate schema
         run: ./gen_schema.sh
+
+      - name: Check up-to-date
+        run: git diff --exit-code
